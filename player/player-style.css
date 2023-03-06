@@ -1,0 +1,20 @@
+*{
+    margin:0;
+
+}
+.fp-Video{
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+.display{
+display: flex;
+align-items: center;
+justify-content: center;
+    width: 80vw;
+
+}
+video{
+    object-fit: fill;
+    width:80%;
+}
