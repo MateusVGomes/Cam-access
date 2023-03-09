@@ -1,7 +1,19 @@
+const submitButton =document.getElementById('submitButton');
+
 var users=[{
     login:"admin",
     password:"admin"
 }];
+function submitUser(){
+  const loginInput =document.getElementById('loginInput').value;
+  const passwordInput =document.getElementById('passwordInput').value;
+  console.log(loginInput,passwordInput);
+validateLogin(loginInput,passwordInput);
+
+}
+
+
+
 function validateLogin(login,password){
     let isValidUser=false;  
     
@@ -14,7 +26,6 @@ for (let i=0;i<users.length;i++){
             isValidUser=true;
           }    
 }
-return isValidUser;
+return console.log(isValidUser);
 }
 
-console.log(validateLogin("admin","admin"));
