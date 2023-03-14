@@ -1,8 +1,31 @@
-*{
-    margin:0;
+* {
+  margin: 0;
 }
-body{
-   background:#262949;
-   font-family: 'Raleway', sans-serif;
-   color:white;
+body {
+  background: #262949;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+.mainContent {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.inputSection{
+display:grid;
+grid-template-rows: auto;    
+height: 50vh;
+justify-content: center;
+align-items: center;
+justify-items: center;
+background: #262960;
+
+}
+.inputBox{
+    display:grid;
+    grid-template-columns: auto;
+    
+    width:25vw;
 }
