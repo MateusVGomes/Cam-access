@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script type="text/javascript" src="https://flashphoner.com/downloads/builds/flashphoner_client/wcs_api-2.0/current/flashphoner.js"></script>
-        <script type="text/javascript" src="player.js"></script>
-        <link rel="stylesheet" href="player-style.css">
-    </head>
-    <body onload="init_api()">
-        <label for="endereço">Digiteo endereço</label>
-        <input type="text" class="adress" placeholder="endereço" id="address">
-        <button type="submit" onclick="setAddress()">Confirme endereço</button>        
-        <div class="fp-Video">
-            <div id="play" class="display"></div>
-        </div>
-        <br />
-        <button id="playBtn">PLAY</button>
-           
-    </body>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://flashphoner.com/downloads/builds/flashphoner_client/wcs_api-2.0/current/flashphoner.js"
+    ></script>
+    <script type="text/javascript" src="player.js"></script>
+    <link rel="stylesheet" href="player-style.css" />
+  </head>
+  <body onload="init_api()">
+    <label for="inputUser">Usuario</label>
+    <input type="text" id="inputUser" />
+    <label for="inputPassword">Senha</label>
+    <input type="password" id="inputPassword" />
+    <label for="inputIP">IP</label>
+    <input type="text" id="inputIP" />
+    <label for="inputPort">Porta</label>
+    <input type="text" id="inputPort" />
+    <button type="submit" id="submitButton" onclick="confirmAddress()">
+      Confirmar
+    </button>
+    <div class="fp-Video">
+      <div id="play" class="display"></div>
+    </div>
+    <br />
+
+    <button id="playBtn">PLAY</button>
+  </body>
 </html>

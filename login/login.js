@@ -1,9 +1,11 @@
 const submitButton =document.getElementById('submitButton');
 
+submitButton.addEventListener('click', submitUser);
 var users=[{
     login:"admin",
     password:"admin"
 }];
+export {users};
 function submitUser(){
   const loginInput =document.getElementById('loginInput').value;
   const passwordInput =document.getElementById('passwordInput').value;

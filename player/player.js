@@ -1,9 +1,19 @@
 // Status constants
 var SESSION_STATUS = Flashphoner.constants.SESSION_STATUS;
 var STREAM_STATUS = Flashphoner.constants.STREAM_STATUS;
-var session;
-var PRELOADER_URL = "https://github.com/flashphoner/flashphoner_client/raw/wcs_api-2.0/examples/demo/dependencies/media/preloader.mp4";
-var address;
+var PRELOADER_URL =
+  "https://github.com/flashphoner/flashphoner_client/raw/wcs_api-2.0/examples/demo/dependencies/media/preloader.mp4";
+const submitButton = document.getElementById("submitButton");
+var RTSPAddress;
+submitButton.addEventListener("click", function () {
+  const user = document.getElementById("inputUser").value;
+  const password = document.getElementById("inputPassword").value;
+  const IP = document.getElementById("inputIP").value;
+  const port = document.getElementById("inputPort").value;
+  RTSPAddress='rtsp://'+user+':'+password+"@"+IP+':'+port;
+  console.log(RTSPAddress);
+
+});
 
 function init_api() {
   Flashphoner.init({});
@@ -15,25 +25,21 @@ function init_api() {
 
   playBtn.onclick = playClick;
 }
-
 // Detect browser
 var Browser = {
   isSafari: function () {
     return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   },
 };
-
-function setAddress() {
-  const inputAddress = document.getElementById("address");
-  address = inputAddress.value;
-  console.log(address);
-}
-
 function playClick() {
   const videoContainer = document.getElementById("play");
   if (videoContainer.querySelector("video") === null) {
     if (Browser.isSafari()) {
-      Flashphoner.playFirstVideo(document.getElementById("play"), true, PRELOADER_URL).then(function () {
+      Flashphoner.playFirstVideo(
+        document.getElementById("play"),
+        true,
+        PRELOADER_URL
+      ).then(function () {
         playStream();
       });
     } else {
@@ -47,10 +53,11 @@ function playClick() {
 }
 
 function playStream() {
-  if (address) { // check if address is defined
+  if (RTSPAddress) {
+    // check if address is defined
     session
       .createStream({
-        name: address, // specify the RTSP stream address
+        name: RTSPAddress, // specify the RTSP stream address
         display: document.getElementById("play"),
       })
       .on(STREAM_STATUS.PUBLISHING, function (publishStream) {

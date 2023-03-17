@@ -1,3 +1,4 @@
+
 const specialCharacterRegex = /[\W]/g;
 const upperCaseCharacterRegex = /[A-Z]/g;
 const formInput = document.getElementById("formRegister");
